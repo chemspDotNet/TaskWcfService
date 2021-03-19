@@ -14,6 +14,14 @@ namespace TaskWcfService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+      public static  List<Quote> quotes = new List<Quote>()
+            {
+                new Quote {QuoteID= 1, QuoteName="Auto Insurance Quote", QuoteType="Monthly" },
+
+                new Quote {QuoteID= 2, QuoteName="Health Insurance Quote", QuoteType="Monthly" },
+
+                new Quote {QuoteID= 3, QuoteName="Life Insurance Quote", QuoteType="Monthly" },
+            };
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -36,14 +44,7 @@ namespace TaskWcfService
 
       public  List<Quote> GetQuotes()
         {
-            var quotes = new List<Quote>()
-            {
-                new Quote {QuoteID= 1, QuoteName="Auto Insurance Quote", QuoteType="Monthly" },
-
-                new Quote {QuoteID= 2, QuoteName="Health Insurance Quote", QuoteType="Monthly" },
-
-                new Quote {QuoteID= 3, QuoteName="Life Insurance Quote", QuoteType="Monthly" },
-            };
+           
             return quotes;
         }
 
